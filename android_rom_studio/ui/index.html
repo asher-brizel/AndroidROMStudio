@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android ROM Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Android ROM Studio</h1>
+
+        <div class="section">
+            <h2>בחר קובץ ROM (ZIP)</h2>
+            <div class="file-picker-container">
+                <input type="text" id="romPath" readonly placeholder="לא נבחר קובץ...">
+                <button onclick="browseFile()">עיון</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>הגדרות מתקדמות</h2>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="removeGapps"> הסרת אפליקציות Google
+                </label>
+                <label>
+                    <input type="checkbox" id="hideStatusIcons"> הסתרת אייקונים משורת הסטטוס
+                </label>
+                <label>
+                    <input type="checkbox" id="editSystemUI"> עריכת SystemUI (מוגבל)
+                </label>
+                <label>
+                    <input type="checkbox" id="editSettings"> עריכת Settings app (מוגבל)
+                </label>
+                <label>
+                    <input type="checkbox" id="removeSystemApps"> הסרת אפליקציות מערכת (רשימה)
+                </label>
+            </div>
+        </div>
+
+        <div class="section actions">
+            <button class="btn-primary" onclick="processROM()">עבד ROM</button>
+            <button class="btn-secondary" onclick="checkROM()">בדוק ROM</button>
+        </div>
+
+        <div class="section">
+            <h2>יומן אירועים</h2>
+            <div class="console-output" id="consoleOutput">
+                <!-- Logs will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
