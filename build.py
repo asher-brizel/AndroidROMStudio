@@ -26,6 +26,7 @@ def build():
         "--exclude-module", "PySide2",
         "--exclude-module", "PySide6",
         "--exclude-module", "gi",
+        "--collect-all", "webview",
         add_data_arg,
         "android_rom_studio/main.py"
     ]
