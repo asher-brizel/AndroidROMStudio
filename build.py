@@ -2,8 +2,15 @@
 import os
 import subprocess
 import sys
+import site
 
 def build():
+    print("Installing/Verifying requirements...")
+    try:
+        subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Warning: Failed to install requirements: {e}")
+
     print("Building Android ROM Studio with PyInstaller...")
 
     add_data_arg = "--add-data=android_rom_studio/ui:ui"
@@ -11,7 +18,9 @@ def build():
         add_data_arg = "--add-data=android_rom_studio/ui;ui"
 
     cmd = [
-        "pyinstaller",
+        sys.executable,
+        "-m", "PyInstaller",
+        "--clean",
         "--noconfirm",
         "--onedir",
         "--windowed",
@@ -27,6 +36,7 @@ def build():
         "--exclude-module", "PySide6",
         "--exclude-module", "gi",
         "--collect-all", "webview",
+        "--copy-metadata", "pywebview",
         add_data_arg,
         "android_rom_studio/main.py"
     ]
