@@ -1,0 +1,132 @@
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --border-color: #ccc;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --console-bg: #1e1e1e;
+    --console-text: #00ff00;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.file-picker-container {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.actions button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+}
+
+.console-output {
+    background-color: var(--console-bg);
+    color: var(--console-text);
+    padding: 15px;
+    border-radius: 4px;
+    height: 200px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+    direction: ltr; /* English/Code logic looks better in LTR */
+}
+
+.log-entry {
+    margin-bottom: 5px;
+}
+
+.log-info { color: #00ff00; }
+.log-warning { color: #ffaa00; }
+.log-error { color: #ff0000; }
